@@ -11,13 +11,13 @@ pipeline {
 
         stage('Check Python Installation') {
             steps {
-                bat 'python --version'
+                bat '"C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" --version'
             }
         }
 
         stage('Run HTML Form Tests') {
             steps {
-                bat 'python -m unittest test_form.py -v'
+                bat '"C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" -m unittest test_form.py -v'
             }
         }
     }
@@ -28,7 +28,7 @@ pipeline {
         }
 
         failure {
-            echo 'FAILURE: Pipeline failed. Check Console Output.'
+            echo 'FAILURE: Check Console Output for errors.'
         }
 
         always {
